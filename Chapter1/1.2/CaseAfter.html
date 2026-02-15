@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上面那行为了做手机浏览的自适应否则会变得很小 -->
+  <title>示例站点</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Arial; margin: 0; }
+    header, nav, main, aside, footer { padding: 16px; }
+    header { background: #0ea5e9; color: #fff; }
+    nav { background: #e2e8f0; }
+    nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 12px; }
+    nav a.link { display: inline-block; padding: 8px 12px; background: #fff; border-radius: 6px; text-decoration: none; color: #111; }
+    .layout { display: grid; grid-template-columns: 1fr 280px; gap: 16px; }
+    h1, h2, h3 { margin: 0 0 8px; }
+    section, article { padding: 8px 0; }
+  </style>
+</head>
+<body>
+  <a href="#main-content">跳至主内容</a>
+
+  <header>
+    <h1>我的站点</h1>
+  </header>
+
+  <nav aria-label="主导航">
+    <ul>
+      <li><a class="link" href="#">首页</a></li>
+      <li><a class="link" href="#">文章</a></li>
+      <li><a class="link" href="#">关于</a></li>
+    </ul>
+  </nav>
+
+  <div class="layout">
+    <main id="main-content">
+      <section aria-labelledby="welcome-title">
+        <h2 id="welcome-title">欢迎</h2>
+        <p>这里是介绍文本。</p>
+      </section>
+
+      <section aria-labelledby="latest-title">
+        <h2 id="latest-title">最新文章</h2>
+        <article>
+          <h3>文章 A</h3>
+          <p>摘要文本</p>
+        </article>
+        <article>
+          <h3>文章 B</h3>
+          <p>摘要文本</p>
+        </article>
+      </section>
+    </main>
+
+    <aside aria-label="侧栏">
+      <section aria-labelledby="tags-title">
+        <h2 id="tags-title">标签</h2>
+        <ul>
+          <li>标签 A</li>
+          <li>标签 B</li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <footer>
+    <p>版权所有</p>
+  </footer>
+</body>
+</html>
