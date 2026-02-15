@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>渲染流程 + Async / Defer 实验</title>
+
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Arial; margin: 0; }
+    header { background: #0ea5e9; color: #fff; padding: 16px; }
+    nav { display: flex; gap: 12px; padding: 16px; background: #e2e8f0; }
+    .link { display: inline-block; padding: 8px 12px; background: #fff; border-radius: 6px; transition: all .2s ease; }
+    .link.shift-a:hover { position: relative; top: 20px; }
+    .link.shift-b { will-change: transform; }
+    .link.shift-b:hover { transform: translateY(20px); }
+    main, article, footer { padding: 16px; }
+  </style>
+
+  <!-- 普通阻塞脚本 -->
+  <script src="normal.js"></script>
+
+  <!-- defer 脚本 -->
+  <script src="deferScript.js" defer></script>
+
+  <!-- async 脚本 -->
+  <script src="asyncScript.js" async></script>
+
+</head>
+<body>
+  <header><h1>流程与重绘/重排实验</h1></header>
+
+  <nav>
+    <a class="link shift-a" href="#">A-重排</a>
+    <a class="link shift-b" href="#">B-transform</a>
+  </nav>
+
+  <main>
+    <article>
+      <h2>文章标题</h2>
+      <p>多复制几段文字，让页面可滚动，用于观察渲染行为。</p>
+    </article>
+  </main>
+
+  <footer>Footer</footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("DOMContentLoaded 触发");
+    });
+
+    window.addEventListener("load", () => {
+      console.log("window load 触发");
+    });
+  </script>
+
+</body>
+</html>
