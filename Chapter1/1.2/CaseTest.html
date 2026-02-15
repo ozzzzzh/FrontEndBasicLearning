@@ -1,0 +1,141 @@
+<!-- <!DOCTYPE html>
+<html lang="zh-CN">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        HomeWorks
+    </title>
+    <style>
+
+    </style>
+    <body>
+        <a href="#main-content">跳转至主内容</a>
+        <header >
+            <h1 class="title">我的站点</h1>
+        </header>
+        <nav aria-label="主导航">
+            <ul>
+            <li><a class="link" href="#">首页</a></li>
+            <li><a class="link" href="#">文章</a></li>
+            <li><a class="link" href="#">关于</a></li>
+            </ul>
+        </nav>
+        <main id="main-content">
+            <section>
+                <h2>First Section</h2>
+            </section>
+            <section>
+                <article>
+                    <h3>First Article</h3>
+                    <p>这是第一篇文章的内容。</p>
+                </article>
+                <article>
+                    <h3>Second Article</h3>
+                    <p>这是第二篇文章的内容。</p>
+                </article>
+                <article>
+                    <h3>Third Article</h3>
+                    <p>这是第三篇文章的内容。</p>
+                </article>
+            </section>
+        </main>
+        <aside>
+
+        </aside>
+        <footer>
+            <div class="copyright">版权所有</div>
+        </footer>
+    </body>
+</html> -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>语义结构练习 1.2</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Arial; margin: 0; }
+    header, nav, main, aside, footer { padding: 16px; }
+    header { background: #0ea5e9; color: #fff; }
+    nav { background: #e2e8f0; }
+    nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 12px; }
+    a.link { display: inline-block; padding: 8px 12px; background: #fff; border-radius: 6px; text-decoration: none; color: #111; }
+    .layout { display: grid; grid-template-columns: 1fr 280px; gap: 16px; }
+    h1, h2, h3 { margin: 0 0 8px; }
+    section, article { padding: 8px 0; }
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 16px;
+      top: 8px;
+      width: auto;
+      height: auto;
+      background: #fff;
+      color: #111;
+      padding: 8px 12px;
+      border-radius: 6px;
+      box-shadow: 0 0 0 2px #0ea5e9;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主内容</a>
+
+  <header>
+    <h1>在这里写页面主标题</h1>
+  </header>
+
+  <nav aria-label="主导航">
+    <ul>
+      <li><a class="link" href="#">首页</a></li>
+      <li><a class="link" href="#">文章</a></li>
+      <li><a class="link" href="#">关于</a></li>
+    </ul>
+  </nav>
+
+  <div class="layout">
+    <main id="main-content">
+      <section aria-labelledby="welcome-title">
+        <h2 id="welcome-title">欢迎</h2>
+        <p>在这里写介绍文本。</p>
+      </section>
+
+      <section aria-labelledby="latest-title">
+        <h2 id="latest-title">最新文章</h2>
+        <article>
+          <h3>文章 A</h3>
+          <p>摘要内容。</p>
+        </article>
+        <article>
+          <h3>文章 B</h3>
+          <p>摘要内容。</p>
+        </article>
+        <article>
+          <h3>文章 C</h3>
+          <p>摘要内容。</p>
+        </article>
+      </section>
+    </main>
+
+    <aside aria-label="侧栏">
+      <section aria-labelledby="tags-title">
+        <h2 id="tags-title">标签</h2>
+        <ul>
+          <li>标签 A</li>
+          <li>标签 B</li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <footer>
+    <p>版权所有</p>
+  </footer>
+</body>
+</html>
